@@ -6,7 +6,7 @@ export default async function SearchTopPage() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Search Results for: {query}</h1>
+      <h1 className="text-2xl font-bold mb-4">Search Results for: </h1>
 
     </div>
   );

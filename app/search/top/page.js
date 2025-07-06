@@ -1,11 +1,8 @@
 "use client";
 
 import React from "react";
-import { useSearchParams } from "next/navigation";
 
 export default async function SearchTopPage() {
-  const searchParams = await useSearchParams();
-  const query = searchParams.get("q") || "";
 
   return (
     <div className="p-4">

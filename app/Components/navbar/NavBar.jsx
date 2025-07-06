@@ -140,7 +140,7 @@ const NavBar = () => {
             </div>
           ) : (
             <AlignJustify
-              size={19}
+              size={20}
               color="black"
               className="cursor-pointer lg:hidden md:block sm:block block"
               onClick={handleClick}

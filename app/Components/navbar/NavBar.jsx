@@ -12,7 +12,6 @@ import {
 import Noitfications from "../noitfications/Noitfications";
 import { useRouter } from "next/navigation";
 import { useUser } from "@/app/context/UserContext";
-import Link from "next/link";
 
 const NavBar = () => {
   const router = useRouter();
@@ -156,11 +155,14 @@ const NavBar = () => {
                 >
                   Home
                 </li>
-                <li className="block text-black hover:text-gray-600 cursor-pointer p-2">
-                  About
+                <li onClick={() => router.push("/settings")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
+                  settings
                 </li>
-                <li className="block text-black hover:text-gray-600 cursor-pointer p-2">
-                  Contact
+                <li onClick={() => router.push("/profile")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
+                  profile
+                </li>
+                <li onClick={() => router.push("/followRequests")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
+                  follow Requests
                 </li>
               </ul>
             </div>

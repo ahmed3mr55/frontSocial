@@ -11,6 +11,7 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     const socket = ioClient(process.env.NEXT_PUBLIC_API_URL, {
+      path: "/socket.io",
       withCredentials: true,
     });
     socketRef.current = socket;

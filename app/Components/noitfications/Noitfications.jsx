@@ -5,7 +5,6 @@ import NotificationItem from "./NotificationItem";
 import Spinner from "../Spinner";
 import Alert from "../Alert";
 import { useUser } from "@/app/context/UserContext";
-import { useSocket } from "@/app/context/SocketContext";
 
 export default function Notifications({ onClose }) {
   const {
@@ -16,7 +15,6 @@ export default function Notifications({ onClose }) {
     notifPagination: { fetched, limit },
   } = useUser();
 
-  const socket = useSocket();
   const [localNotifications, setLocalNotifications] = useState([]);
 
   useEffect(() => {
@@ -27,16 +25,6 @@ export default function Notifications({ onClose }) {
     setLocalNotifications(notifications);
   }, [notifications]);
 
-  useEffect(() => {
-    if (!socket) return;
-    const handler = (notif) => {
-      setLocalNotifications((prev) => [notif, ...prev]);
-    };
-    socket.on("newNotification", handler);
-    return () => {
-      socket.off("newNotification", handler);
-    };
-  }, [socket]);
 
   return (
     <div className="w-full max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">

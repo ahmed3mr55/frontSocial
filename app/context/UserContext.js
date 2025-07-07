@@ -1,11 +1,9 @@
 "use client";
 import React, { createContext, useState, useEffect, useContext } from "react";
-import { useSocket } from "./SocketContext";
 
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const socket = useSocket();
   const [user, setUser] = useState(null);
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,14 +29,6 @@ export const UserProvider = ({ children }) => {
     fetched: 0,
   });
 
-  useEffect(() => {
-    if (!socket) return;
-    const handler = (newNotif) => {
-      setNotifications((prev) => [newNotif, ...prev]);
-    };
-    socket.on("newNotification", handler);
-    return () => socket.off("newNotification", handler);
-  }, [socket]);
 
   const fetchUser = async () => {
     setLoading(true);

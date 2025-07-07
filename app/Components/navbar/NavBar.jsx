@@ -153,7 +153,7 @@ const NavBar = () => {
                   onClick={() => router.push("/")}
                   className="block text-black hover:text-gray-600 cursor-pointer p-2"
                 >
-                  Home
+                  <House size={20}/>
                 </li>
                 <li onClick={() => router.push("/settings")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
                   settings

@@ -10,9 +10,10 @@ export const SocketProvider = ({ children }) => {
   const socketRef = useRef(null);
 
   useEffect(() => {
-    const socket = ioClient(process.env.NEXT_PUBLIC_API_URL, {
+    const socket = ioClient("https://backsocial-ten.vercel.app", {
       path: "/socket.io",
       withCredentials: true,
+      transports: ["websocket"],
     });
     socketRef.current = socket;
 

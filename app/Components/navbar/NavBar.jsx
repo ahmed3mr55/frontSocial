@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Search,
   AlignJustify,
@@ -8,6 +8,8 @@ import {
   User,
   Bell,
   AlignLeft,
+  Settings,
+  Users,
 } from "lucide-react";
 import Noitfications from "../noitfications/Noitfications";
 import { useRouter } from "next/navigation";
@@ -150,19 +152,29 @@ const NavBar = () => {
             <div>
               <ul className="absolute top-full right-0 bg-gray-300 rounded-md p-2 mt-2 shadow-lg">
                 <li
-                  onClick={() => router.push("/")}
-                  className="block text-black hover:text-gray-600 cursor-pointer p-2"
+                  onClick={() => router.push("/profile")}
+                  className="flex flex-col items-center gap-1 text-black hover:text-gray-600 cursor-pointer p-2"
                 >
-                  <House size={20}/>
+                  <User size={20} />
+                  <p className="text-md select-none">Profile</p>
                 </li>
-                <li onClick={() => router.push("/settings")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
-                  settings
-                </li>
-                <li onClick={() => router.push("/profile")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
-                  profile
-                </li>
-                <li onClick={() => router.push("/followRequests")} className="block text-black hover:text-gray-600 cursor-pointer p-2">
-                  follow Requests
+                {user?.isPrivate && (
+                  <li
+                    onClick={() => router.push("/followRequests")}
+                    className="flex flex-col items-center gap-1 text-black hover:text-gray-600 cursor-pointer p-2"
+                  >
+                    <Users size={20} />
+                    <p className="text-sm select-none">Follow</p>
+                    <span className="text-sm select-none">Requests</span>
+                  </li>
+                )}
+
+                <li
+                  onClick={() => router.push("/settings")}
+                  className="flex flex-col items-center gap-1 text-black hover:text-gray-600 cursor-pointer p-2"
+                >
+                  <Settings size={20} />
+                  <p className="text-md select-none">Settings</p>
                 </li>
               </ul>
             </div>

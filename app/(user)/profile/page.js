@@ -32,7 +32,7 @@ const Page = () => {
       <div className="max-w-6xl w-full mx-auto px-4 mt-8">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Sidebar */}
-          <aside className="hidden md:block md:sticky md:top-20 md:w-2/5 lg:w-1/3 self-start">
+          <aside className="w-full md:block md:sticky md:top-20 md:w-2/5 lg:w-1/3 self-start">
             <InfoProfile
               bio={user.bio}
               isProfile

@@ -5,13 +5,10 @@ import { useGetDetailsPost } from "@/app/context/GetPostDetails";
 
 const Actions  = ({ postId }) => {
   const { post } = useGetDetailsPost();
-
-  // حالات اللايك والعداد
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
   const [loading, setLoading] = useState(false);
 
-  // تهيئة القيم بناءً على بيانات البوست أول ما توصل
   useEffect(() => {
     if (post) {
       setLiked(!!post.isLiked);

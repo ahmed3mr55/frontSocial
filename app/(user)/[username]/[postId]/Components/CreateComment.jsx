@@ -56,12 +56,12 @@ const CreateComment = ({ postId }) => {
 
       {/* Input + Button group */}
       <div className="relative flex-1">
-        <input
-          type="text"
+        <textarea
           value={body}
+          dir="auto"
           onChange={(e) => setBody(e.target.value)}
           placeholder="Write a comment..."
-          className="w-full border border-gray-300 rounded-full py-2 px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+          className="w-full h-12 resize-none border border-gray-300 rounded-full py-2 px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
         />
         <button
           type="submit"
@@ -70,7 +70,11 @@ const CreateComment = ({ postId }) => {
             absolute right-1 top-1/2 -translate-y-1/2 overflow-hidden
             bg-blue-600 hover:bg-blue-700 active:bg-blue-800 
             p-2 rounded-full text-white transition-opacity
-            ${loading || !body.trim() ? "opacity-50 cursor-not-allowed" : "opacity-100"}
+            ${
+              loading || !body.trim()
+                ? "opacity-50 cursor-not-allowed"
+                : "opacity-100"
+            }
           `}
         >
           {loading ? (

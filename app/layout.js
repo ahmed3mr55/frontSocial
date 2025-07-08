@@ -6,6 +6,9 @@ import ClientProviders from "./ClientProviders";
 export const metadata = {
   title: "A",
   description: "Welcome to A, a social media platform",
+  verification: {
+    google: 'QZp_vS1AoqZ8iSzOEyLR-Wt2lYrRGhPr0pdGWGvuoyw'
+  }
 };
 
 export default function RootLayout({ children }) {

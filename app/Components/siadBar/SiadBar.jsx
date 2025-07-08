@@ -12,7 +12,7 @@ const SiadBar = () => {
     <div>
       {isOpenWindow && <WinCreatePost onClose={() => setIsOpenWindow(false)} />}
       <div className="fixed top-16 left-0 bottom-0 w-1/5 bg-gray-100 p-4 md:flex hidden sm:hidden lg:flex flex-col items-center z-10">
-        <h1 className="text-black font-bold text-3xl mb-4">A</h1>
+        <h2 className="text-blue-600 font-bold text-3xl mb-4">A social</h2>
         <hr className="w-full border-gray-300" />
         <div className="flex flex-col justify-between h-full w-full">
           <ul className="flex flex-col items-start w-full">

@@ -4,11 +4,12 @@ import { PostsContextProvider } from "./context/PostContext";
 import ClientProviders from "./ClientProviders";
 
 export const metadata = {
-  title: "A",
-  description: "Welcome to A, a social media platform",
+  title: "A Social – Connect, Share & Grow | Next‑Gen Social Media Platform",
+  description:
+    "Join A Social today to connect with friends, share your moments, and discover vibrant communities. Experience seamless interaction, instant updates, and personalized feeds on the ultimate social media platform.",
   verification: {
-    google: 'QZp_vS1AoqZ8iSzOEyLR-Wt2lYrRGhPr0pdGWGvuoyw'
-  }
+    google: "QZp_vS1AoqZ8iSzOEyLR-Wt2lYrRGhPr0pdGWGvuoyw",
+  },
 };
 
 export default function RootLayout({ children }) {

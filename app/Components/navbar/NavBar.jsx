@@ -43,7 +43,7 @@ const NavBar = () => {
     <nav className="w-full fixed top-0 left-0 bg-white p-4 flex justify-between shadow-sm items-center z-50 ">
       <div>
         <h1 className="text-blue-600 hover:text-blue-800 font-bold p-1 lg:text-3xl md:text-2xl sm:text-2xl text-2xl cursor-pointer">
-          A
+          A social
         </h1>
       </div>
 

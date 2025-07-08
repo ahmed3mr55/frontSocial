@@ -1,0 +1,8 @@
+# robots.txt for https://front-social-seven.vercel.app/
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://front-social-seven.vercel.app/sitemap.xml
+
+Crawl-delay: 5

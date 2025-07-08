@@ -22,6 +22,11 @@ const SideBarRight = ({ firstName, lastName, profilePicture, isPrivate }) => {
         </div>
       )}
       <ul className="flex flex-col mt-1 items-end w-full text-center border-b-[1.5px]">
+        <li className="text-black flex w-full items-center text-lg ">
+          <h2 className="text-blue-600 text-center font-bold text-3xl mb-4">
+            A social
+          </h2>
+        </li>
         {firstName && lastName && profilePicture && (
           <li
             onClick={() => router.push("/profile")}
@@ -47,10 +52,6 @@ const SideBarRight = ({ firstName, lastName, profilePicture, isPrivate }) => {
             Login
           </button>
         )}
-        <li className="text-black flex w-full py-1 items-center text-lg mb-2  hover:bg-gray-300 hover:rounded-md p-1 cursor-pointer">
-          <Users size={25} className="mr-2" />
-          <span>Following</span>
-        </li>
         <li className="text-black flex w-full py-1 items-center text-lg mb-2  hover:bg-gray-300 hover:rounded-md p-1 cursor-pointer">
           <Users size={25} className="mr-2" />
           <span>Followers</span>

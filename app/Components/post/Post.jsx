@@ -125,9 +125,9 @@ export default function Post({
           />
           <span>{liked ? "Unlike" : "Like"}</span>
         </button>
-        <button className="flex items-center gap-1 py-1 px-2 hover:bg-gray-100 rounded">
+        <Link href={`/${username}/${postId}`}  className="flex items-center gap-1 py-1 px-2 hover:bg-gray-100 rounded">
           <MessageCircle size={18} /> Comment
-        </button>
+        </Link>
         <button
           className="flex items-center gap-1 py-1 px-2 hover:bg-gray-100 rounded"
         >

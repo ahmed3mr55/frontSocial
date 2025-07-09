@@ -130,16 +130,16 @@ const NavBar = () => {
           </>
         )}
 
-        <div>
+        <ul>
           {isMobileMenuOpen ? (
-            <div className="bg-gray-300 p-1 rounded-lg">
+            <li className="bg-gray-300 p-1 rounded-lg">
               <AlignLeft
                 size={20}
                 color="blue"
                 className="cursor-pointer lg:hidden md:block sm:block block"
                 onClick={handleClick}
               />
-            </div>
+            </li>
           ) : (
             <AlignJustify
               size={20}
@@ -179,7 +179,7 @@ const NavBar = () => {
               </ul>
             </div>
           )}
-        </div>
+        </ul>
       </ul>
     </nav>
   );

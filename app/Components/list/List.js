@@ -69,6 +69,7 @@ export default function PostList() {
               isLiked={post.isLiked}
               isPostDetails={true}
               currentUser={user?.username}
+              isAdmin={user?.isAdmin}
             />
           </div>
         );

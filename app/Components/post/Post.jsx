@@ -24,6 +24,7 @@ export default function Post({
   verified,
   isLiked: initialLiked,
   currentUser,
+  isAdmin,
 }) {
   const [liked, setLiked] = useState(initialLiked);
   const [likesCount, setLikesCount] = useState(likes);
@@ -72,19 +73,21 @@ export default function Post({
           </div>
         </div>
 
-        {username === currentUser && (
+        {(username === currentUser || isAdmin) && (
           <div className="relative">
             <button onClick={() => setShowMenu(v => !v)}>
               <Ellipsis size={20} className="text-gray-500 hover:text-gray-700" />
             </button>
             {showMenu && (
               <div className="absolute right-0 mt-2 w-36 bg-white border rounded-md shadow-lg z-10">
-                <button
-                  onClick={() => { setIsOpenEdit(true); setShowMenu(false); }}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
-                >
-                  Edit Post
-                </button>
+                {username === currentUser && (
+                  <button
+                    onClick={() => { setIsOpenEdit(true); setShowMenu(false); }}
+                    className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                  >
+                    Edit Post
+                  </button>
+                )}
                 <button
                   onClick={() => { setIsOpenDelete(true); setShowMenu(false); }}
                   className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"

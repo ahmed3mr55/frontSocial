@@ -7,19 +7,15 @@ import PrivateAccount from "./Components/PrivateAccount";
 import { useUser } from "@/app/context/UserContext";
 import FA2 from "./Components/FA2";
 import Logout from "./Components/Logout";
-import { useRouter } from "next/navigation";
 
 const Page = () => {
   const { user } = useUser();
-  const router = useRouter();
   const [isOpenWindowEmail, setIsOpenWindowEmail] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
   const [isOpenWindowPassword, setIsOpenWindowPassword] = useState(false);
 
-
   const styleCard = (section) => {
-    const base =
-      "p-4 bg-white rounded-lg transition flex flex-col w-full";
+    const base = "p-4 bg-white rounded-lg transition flex flex-col w-full";
     const shadow = activeSection === section ? "shadow-sm" : "";
     return `${base} ${shadow}`;
   };
@@ -27,7 +23,10 @@ const Page = () => {
   return (
     <div className="flex items-center justify-center p-4 transition-colors">
       {isOpenWindowEmail && (
-        <UpdateEmail initialEmail={user.email} onClose={() => setIsOpenWindowEmail(false)} />
+        <UpdateEmail
+          initialEmail={user.email}
+          onClose={() => setIsOpenWindowEmail(false)}
+        />
       )}
       {isOpenWindowPassword && (
         <UpdatePassword onClose={() => setIsOpenWindowPassword(false)} />
@@ -79,8 +78,8 @@ const Page = () => {
               <button className="text-blue-500 hover:underline">Edit</button>
             </div>
             <div className="mt-3 space-y-2">
-                {/* {Placeholder for security options} */}
-                <PrivateAccount isPrivate={user?.isPrivate} />
+              {/* {Placeholder for security options} */}
+              <PrivateAccount isPrivate={user?.isPrivate} />
             </div>
             <div className="mt-3 space-y-2">
               <FA2 twoFactorEnabled={user?.twoFactorEnabled} />

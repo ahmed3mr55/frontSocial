@@ -3,8 +3,8 @@ import { UserAppProvider } from "../UserContext";
 import { GetDetailsPostProvider } from "@/app/context/GetPostDetails";
 
 export const metadata = {
-  title: `Post Details`,
-  description: "Details of the post",
+  title: `Post Details | A Social`,
+  description: "Details of the post on A Social Media Platform",
 };
 
 export default async function RootLayout({ children, params }) {

@@ -4,8 +4,8 @@ import { UserAppProvider } from "./UserContext";
 export async function generateMetadata({ params }) {
   const { username } = await params;
   return {
-    title: `Profile of ${username}`,
-    description: `Welcome to ${username}'s profile page`,
+    title: `Profile of ${username} | A Social`,
+    description: `Welcome to ${username}'s profile page on A Social Media Platform`,
   };
 }
 

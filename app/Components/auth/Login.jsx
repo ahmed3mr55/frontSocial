@@ -6,6 +6,7 @@ import Alert from "../Alert";
 import Spinner from "../Spinner";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import QRCodeScanner from "./QRCodeScanner";
 
 const Login = ({ onClose }) => {
   const [email, setEmail] = useState("");
@@ -145,12 +146,17 @@ const Login = ({ onClose }) => {
             </>
           )}
         </button>
-        <p className="mt-4 text-center lg:text-sm md:text-sm sm:text-xs text-sm text-gray-600">
-          Don't have an account?{" "}
-          <a href="/auth/signup" className="text-blue-500 hover:underline">
-            Sign Up
-          </a>
-        </p>
+        <div className="flex flex-col items-center justify-center">
+          <p className="mt-4 text-center lg:text-sm md:text-sm sm:text-xs text-sm text-gray-600">
+            Don't have an account?{" "}
+            <a href="/auth/signup" className="text-blue-500 hover:underline">
+              Sign Up
+            </a>
+          </p>
+          <div>
+            <QRCodeScanner/>
+          </div>
+        </div>
         <p className="mt-4 text-center lg:text-sm md:text-sm sm:text-xs text-sm text-gray-600">
           <a href="/auth/forgot-password" className="text-blue-500 hover:underline">
             Forgot Password?

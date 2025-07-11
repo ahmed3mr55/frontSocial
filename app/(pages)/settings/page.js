@@ -7,6 +7,7 @@ import PrivateAccount from "./Components/PrivateAccount";
 import { useUser } from "@/app/context/UserContext";
 import FA2 from "./Components/FA2";
 import Logout from "./Components/Logout";
+import GenerateQECode from "./Components/GenerateQECode";
 
 const Page = () => {
   const { user } = useUser();
@@ -48,7 +49,7 @@ const Page = () => {
                   setActiveSection("Account");
                   setIsOpenWindowEmail(true);
                 }}
-                className="p-2 bg-gray-50 rounded hover:bg-gray-100"
+                className="p-2 bg-gray-50 rounded cursor-pointer hover:bg-gray-100"
               >
                 Change Email
               </div>
@@ -57,9 +58,14 @@ const Page = () => {
                   setActiveSection("Account");
                   setIsOpenWindowPassword(true);
                 }}
-                className="p-2 bg-gray-50 rounded hover:bg-gray-100"
+                className="p-2 bg-gray-50 rounded cursor-pointer hover:bg-gray-100"
               >
                 Change Password
+              </div>
+              <div
+                className="p-2 bg-gray-50 rounded hover:bg-gray-100"
+              >
+                <GenerateQECode />
               </div>
               <Logout />
             </div>

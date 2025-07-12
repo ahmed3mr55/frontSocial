@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Social Media Platform
 
-## Getting Started
+> A full‑featured social networking site built with Next.js, Tailwind CSS, Express.js, MongoDB and Socket.io.
 
-First, run the development server:
+## 🛠️ Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* **Frontend:** Next.js, Tailwind CSS
+* **Backend:** Express.js, Socket.io
+* **Database:** MongoDB (Mongoose)
+* **Media Storage:** Cloudinary
+* **Authentication & Security:** JWT, HTTP‑Only Cookies, Two‑Factor (2FA)
+* **Real‑Time:** Socket.io for live notifications
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Our Social Media Platform lets you post text updates, like/unlike posts, comment and reply in threads, follow other users (with private‑account support), track profile visitors, and receive real‑time notifications for likes, comments, follows, profile visits, and more—all within a sleek, mobile‑friendly interface.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔑 Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* **Post Creation & Engagement**
+  Create posts, like or unlike them, view like and comment counts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Nested Comments & Replies**
+  Add comments and threaded replies, show/hide replies with “load more.”
 
-## Deploy on Vercel
+* **User Profiles**
+  View any user’s profile showing bio, location, relationship status, personal links and profile picture.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Privacy Controls & Follow Requests**
+  Switch to a private account—new followers require your approval; approve or reject incoming requests.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* **Profile Visitor Tracking**
+  See who’s viewed your profile when you enable visitor history.
+
+* **Real‑Time Notifications**
+  Instant in‑app alerts (via Socket.io) for new followers, likes, comments, replies, profile visits, and more.
+
+* **Two‑Factor Authentication (2FA)**
+  Add extra security by requiring a one‑time code during login.
+
+* **Logout Everywhere**
+  Invalidate all active sessions from your account settings.
+
+* **Cloudinary Image Optimization**
+  Upload and serve optimized profile images and post media.
+
+---
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/ahmed3mr55/frontSocial.git
+   cd front
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install       # or yarn install
+   ```
+
+3. **Environment Variables**
+   Create a `.env` file in the project root with these keys (do **not** include actual values):
+
+   ```env
+      NEXT_PUBLIC_API_URL=
+   ```
+
+4. **Run FrontEnd (Next.js)**
+
+   ```bash
+   npm run dev
+   ```
+
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please open issues or submit pull requests to help improve the platform.
+
+---
+
+## 🔒 License
+
+This project is licensed under the MIT License.

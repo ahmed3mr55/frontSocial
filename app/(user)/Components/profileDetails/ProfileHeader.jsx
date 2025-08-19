@@ -5,6 +5,7 @@ import EditProfile from "../editProfile/EditProfile";
 import Follow from "../Follow";
 import Following from "@/app/Components/Followers&Following/Following";
 import Followers from "@/app/Components/Followers&Following/Followers";
+import ViewImage from "../ViewImage";
 
 const ProfileHeader = ({
   username,
@@ -21,18 +22,26 @@ const ProfileHeader = ({
 
   const [isOpenFollowers, setIsOpenFollowers] = useState(false);
   const [isOpenFollowing, setIsOpenFollowing] = useState(false);
+  const [isOpenViewImage, setIsOpenViewImage] = useState(false);
 
   return (
     <header className="w-full bg-white rounded-lg shadow-lg overflow-hidden">
       {/* Blue banner */}
       <div className="h-32 bg-blue-500 relative">
-        <div className="absolute left-6 right-6 bottom-[-3rem] size-28 sm:size-28 md:size-32 lg:size-35 rounded-full border-4 border-white overflow-hidden bg-gray-200">
+        <div onClick={() => setIsOpenViewImage(true)} className="absolute cursor-pointer left-6 right-6 bottom-[-3rem] size-28 sm:size-28 md:size-32 lg:size-35 rounded-full border-4 border-white overflow-hidden bg-gray-200">
           <img
             src={avatarUrl}
             alt={`${firstName} avatar`}
             className="w-full h-full object-cover"
           />
         </div>
+        {/* View Image button */}
+        {isOpenViewImage && (
+          <ViewImage
+            onClose={() => setIsOpenViewImage(false)}
+            imageUrl={avatarUrl}
+          />
+        )}
         {/* Edit Profile button */}
         {isOpenEdit && (
           <EditProfile

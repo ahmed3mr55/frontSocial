@@ -73,14 +73,14 @@ export default function QRCodeScanner() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="bg-white rounded-lg p-4 w-full max-w-md">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center overflow-hidden">
               <h3 className="text-lg font-semibold mb-4">Scan QR to Login</h3>
               {loading && <Spinner />}
               {error && <Alert type="error" message={error} />}
               <div
                 id="qr-scanner"
                 ref={scannerRef}
-                className="w-full h-64 mb-4"
+                className="w-full rounded-lg overflow-hidden"
               />
               <button
                 className="mt-4 px-4 py-2 w-full z-50 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition"

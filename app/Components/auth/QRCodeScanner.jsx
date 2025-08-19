@@ -10,21 +10,25 @@ export default function QRCodeScanner() {
   const [error, setError] = useState(null);
   const scannerRef = useRef(null);
   const html5QrcodeScannerRef = useRef(null);
+  const lastScannedRef = useRef(null);
 
   const startScanner = () => {
     setError(null);
     const config = { fps: 10, qrbox: 250 };
     html5QrcodeScannerRef.current = new Html5Qrcode(scannerRef.current.id);
-    html5QrcodeScannerRef.current.start(
-      { facingMode: "environment" },
-      config,
-      onScanSuccess,
-      onScanFailure
-    ).catch((err) => setError(err.message));
+    html5QrcodeScannerRef.current
+      .start({ facingMode: "environment" }, config, onScanSuccess, onScanFailure)
+      .catch((err) => setError(err.message));
   };
 
-  const onScanSuccess = async (decodedText) => {
+  const onScanSuccess = async (decodedText) =>{
+    if (lastScannedRef.current === decodedText) {
+      return;
+    }
+
+    lastScannedRef.current = decodedText;
     setLoading(true);
+
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login/qrcode`,
@@ -35,21 +39,26 @@ export default function QRCodeScanner() {
           body: JSON.stringify({ qrcodeToken: decodedText }),
         }
       );
+
       const result = await res.json();
       if (!res.ok) throw new Error(result.message || "Login via QR failed");
+
       // Stop scanner after success
       await html5QrcodeScannerRef.current.stop();
       setIsOpen(false);
       location.href = "/";
     } catch (err) {
       setError(err.message);
+      setTimeout(() => {
+        lastScannedRef.current = null;
+      }, 3000);
     } finally {
       setLoading(false);
     }
   };
 
   const onScanFailure = (errorMessage) => {
-    // ignore continuous errors
+    // تجاهل الأخطاء المتكررة
     console.warn("QR scan failed:", errorMessage);
   };
 

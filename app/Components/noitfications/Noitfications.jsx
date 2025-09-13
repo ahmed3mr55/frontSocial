@@ -19,7 +19,7 @@ export default function Notifications({ onClose }) {
 
   useEffect(() => {
     fetchNotifications();
-  }, [fetchNotifications]);
+  }, []);
 
   useEffect(() => {
     setLocalNotifications(notifications);

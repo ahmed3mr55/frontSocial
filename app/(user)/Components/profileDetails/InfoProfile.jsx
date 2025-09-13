@@ -27,7 +27,7 @@ const InfoProfile = ({
       {/* Intro */}
       <section className="flex flex-col w-full gap-2">
         {isOpenViewerHistory && (
-          <ViewerHistory onClose={() => setIsOpenViewerHistory(false)} />
+          <ViewerHistory  onClose={() => setIsOpenViewerHistory(false)} />
         )}
         <h2 className="text-xl font-semibold flex items-center gap-2 text-gray-800">
           Intro 
